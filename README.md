@@ -36,5 +36,3 @@ To automate the manual task of managing an IP allowlist using Python, and show f
 
 ---
 
-## 📁 File Structure
-
