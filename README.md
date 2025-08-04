@@ -1,38 +1,46 @@
-# Log-Parser-Alert-Script
-A Python script to parse logs and remove unauthorized IPs.
-
 # 🔧 Log Parser & Alert Script with Python
 
-A simple yet effective Python script that simulates the responsibilities of a Security Analyst by parsing a log file containing allowed IP addresses and removing unauthorized IPs from the list.
+A Python-based script that parses a log file of IP addresses and removes unauthorized ones while generating alert messages and maintaining a log of removed entries.
 
 ---
 
 ## 📌 Project Description
 
-This project is designed to:
-- Parse a log file (`allow_list.txt`) containing a list of IP addresses with access permissions.
-- Cross-check the file against a list of IPs that should no longer have access.
-- Remove those IPs from the file.
-- Overwrite the file with the updated list.
+This project simulates the responsibilities of a SOC (Security Operations Center) Analyst by automating the task of managing IP allowlists. The script:
 
-It demonstrates the use of basic Python file handling, string manipulation, and list operations — all essential skills for entry-level roles in cybersecurity, especially in SOC (Security Operations Center) environments.
+- Parses a file containing IP addresses (`allow_list.txt`).
+- Removes IPs that are no longer authorized (`remove_list`).
+- Generates alert messages when such IPs are found and removed.
+- Logs each removal event in a separate log file (`removed_ips.log`).
+- Validates the format of IPs before processing.
 
 ---
 
 ## 🎯 Objective
 
-To automate the manual task of managing an IP allowlist using Python, and show foundational skills in:
-
-- Reading and writing files
-- Parsing and processing logs
-- Automating security policies
+To demonstrate basic cybersecurity automation through:
+- Log parsing
+- Alert generation
+- Access control via file manipulation
+- Python scripting
 
 ---
 
 ## 🛠️ Technologies Used
 
 - Python 3.x
-- Text file as input (`allow_list.txt`)
+- Text file I/O
+- Regular Expressions (`re`)
+- Date/Time module (`datetime`)
 
 ---
 
+## ⚙️ How It Works
+
+1. Loads the list of authorized IPs from `allow_list.txt`.
+2. Defines a list of blacklisted IPs to be removed.
+3. Validates IP format before removal.
+4. Removes any matches from the main list.
+5. Prints an alert for each removal.
+6. Logs all removals to `removed_ips.log` with a timestamp.
+7. Overwrites the original IP file with the updated list.
